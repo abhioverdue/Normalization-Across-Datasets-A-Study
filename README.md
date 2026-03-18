@@ -6,10 +6,10 @@ A controlled empirical study comparing BatchNorm, LayerNorm, GroupNorm, and no n
 
 ```
 ├── MNIST_Notebook.ipynb       # MNIST experiments (5 epochs, BS ∈ {2,4,8,32,64}, 3 seeds)
-├── CIFAR10_Notebook.ipynb     # CIFAR-10 experiments (10 epochs, BS ∈ {8,64}, 2 seeds)
+├── CIFAR_10_Notebook.ipynb     # CIFAR-10 experiments (10 epochs, BS ∈ {8,64}, 2 seeds)
 ├── mnist_full_results.csv     # Raw results — MNIST
 ├── cifar_full_results.csv     # Raw results — CIFAR-10
-└── normalization_paper.docx   # Full research paper
+└── Normalization.docx   # Full mini-research paper
 ```
 
 ## Setup
@@ -32,7 +32,3 @@ Run each notebook top-to-bottom. Datasets download automatically via `torchvisio
 - **MNIST**: all methods score 98.6–98.9% — normalization is irrelevant.
 - **CIFAR-10**: no normalization collapses at small batch sizes; GroupNorm is most robust.
 - **BatchNorm** degrades at BS < 16 due to noisy batch statistics — prefer GroupNorm or LayerNorm when batch size is constrained.
-
-## Citation
-
-If you use this work, please cite the paper included in this repository.
